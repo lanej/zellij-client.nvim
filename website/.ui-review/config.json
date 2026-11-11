@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "enforceOnStop": false,
+  "sourcePaths": [
+    "."
+  ],
+  "sourceChecks": [
+    {
+      "id": "impeccable",
+      "format": "impeccable",
+      "targets": [
+        "."
+      ],
+      "authority": "advisory"
+    }
+  ],
+  "accessibility": true,
+  "projectDocuments": [
+    "DESIGN.md"
+  ],
+  "pages": [
+    {
+      "name": "overview",
+      "path": "/zellij-client.nvim/",
+      "ready": "h1"
+    },
+    {
+      "name": "client-api",
+      "path": "/zellij-client.nvim/reference/client/",
+      "ready": "h1"
+    }
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ]
+}

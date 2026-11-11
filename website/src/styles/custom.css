@@ -1,0 +1,14 @@
+:root {
+  --sl-color-accent-low: #173b2e;
+  --sl-color-accent: #4b9269;
+  --sl-color-accent-high: #c1e1cc;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #d9ede0;
+  --sl-color-accent: #287147;
+  --sl-color-accent-high: #123a25;
+}
+
+.sl-markdown-content :not(pre) > code {
+  font-size: max(0.875rem, 0.875em);
+}

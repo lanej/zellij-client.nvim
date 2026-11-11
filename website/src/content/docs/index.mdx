@@ -1,0 +1,41 @@
+---
+title: zellij-client.nvim
+description: Send native Zellij actions from Neovim without starting a process for each request.
+---
+
+Send native Zellij actions from Neovim over a Unix socket. Use the full generated protobuf contract, receive asynchronous replies, and keep navigation policy in your own integration.
+
+The client was extracted from [my dotfiles](https://github.com/lanej/dotfiles) after removing command startup from editor-to-pane navigation. It installs no key mappings and requires no setup call.
+
+## Start with one request
+
+```lua
+local path = "/absolute/path/to/the/session/socket"
+local stat = assert(vim.uv.fs_lstat(path))
+assert(stat.type == "socket")
+local client = require("zellij").new({ path, stat.dev, stat.ino })
+
+client:request({ list_tabs = { output_json = true } }, {
+    expect_output = true,
+}, function(error, output, response)
+    if error then
+        vim.notify(error, vim.log.levels.WARN)
+        return
+    end
+    vim.print(vim.json.decode(output))
+end)
+```
+
+[Install the package](./getting-started/) and [resolve the intended session](./guides/session-discovery/) before sending an action.
+
+## Preserve uncertainty
+
+A request gets its own socket and timer. Its callback runs once on Neovim's main loop. A timeout, cancellation, or disconnect does not establish whether a mutation ran; the client never replays requests automatically.
+
+Read the [client API](./reference/client/) for lifecycle and outcomes, or the [protobuf API](./reference/protobuf/) for generated messages and enums.
+
+## Supported runtime
+
+Neovim **0.11.5 or newer**, with LuaJIT, on macOS or Linux. Live navigation has also been tested on Neovim **0.12.6**. The supported server is the pinned [lanej/Zellij 0.46.0 revision](https://github.com/lanej/zellij/tree/744c99f5a3a51682553897411d1a891dac04d886), using `contract_version_1`. A matching version string alone does not establish protocol compatibility.
+
+[Compatibility and development](./reference/compatibility/) · [Source](https://github.com/lanej/zellij-client.nvim) · [Josh Lane's open-source projects](https://lanej.io/open-source/)
