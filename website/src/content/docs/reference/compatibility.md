@@ -33,9 +33,10 @@ The socket checks use private local servers. They cover fragmented replies, ackn
 ## Build this documentation
 
 ```sh
-npm ci --prefix website
-npm run check --prefix website
-npm run build --prefix website
+cd website
+npm ci
+npm run check
+npm run build
 ```
 
 The static site uses `/zellij-client.nvim/` as its base path. The [lanej.io website](https://github.com/lanej/lanej.github.com) pins a reviewed package commit, builds this directory and assembles the output into its single GitHub Pages bundle. Update the website's `.zellij-client-version` pin to publish a documentation revision.

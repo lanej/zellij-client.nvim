@@ -17,9 +17,10 @@ uv run scripts/generate.py --check
 nvim --headless -u NONE -i NONE -l tests/protobuf.lua
 nvim --headless -u NONE -i NONE -l tests/client.lua
 stylua --check lua tests
-npm ci --prefix website
-npm run check --prefix website
-npm run build --prefix website
+cd website
+npm ci
+npm run check
+npm run build
 ```
 
 The [development guide](https://lanej.io/zellij-client.nvim/reference/compatibility/) describes the vendored source contract, generation, validation boundaries and documentation publishing. Docs live in `website/src/content/docs/`. The lanej.io repository pins a package revision and publishes this Starlight site in its GitHub Pages bundle.
