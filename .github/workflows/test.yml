@@ -1,0 +1,26 @@
+name: Client contract
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  client:
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: rhysd/action-setup-vim@v1
+        with:
+          version: v0.11.5
+          neovim: true
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --global @johnnymorganz/stylua-bin@2.3.1
+      - run: stylua --check lua tests
+      - run: uv run scripts/generate.py --check
+      - run: nvim --headless -u NONE -i NONE -l tests/protobuf.lua
+      - run: nvim --headless -u NONE -i NONE -l tests/client.lua
