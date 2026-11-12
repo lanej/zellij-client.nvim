@@ -7,7 +7,7 @@ description: Runtime pinning, contract generation and validation boundaries.
 
 Use Neovim 0.11.5 or newer with LuaJIT, on macOS or Linux. The client has passed protocol and socket checks on Neovim 0.11.5, and live dotfiles navigation on 0.12.6.
 
-The supported server is [lanej/Zellij 0.46.0 at `744c99f5`](https://github.com/lanej/zellij/tree/744c99f5a3a51682553897411d1a891dac04d886), using `contract_version_1`. Compatibility with other revisions is unverified. The internal socket protocol can change independently of the version string.
+The supported server is [lanej/Zellij 0.46.0 at `6647ab29`](https://github.com/lanej/zellij/tree/6647ab291f68c5154dfc4bcceab07b659a2d0efd), using `contract_version_1`. Compatibility with other revisions is unverified. The internal socket protocol can change independently of the version string.
 
 ## Regenerate the contract
 

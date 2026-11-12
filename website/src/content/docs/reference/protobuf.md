@@ -36,6 +36,6 @@ Nested messages, oneofs, packed and unpacked repeated fields, and maps retain pr
 
 ## Source contract
 
-The package vendors `common_types.proto`, `client_to_server.proto`, `server_to_client.proto`, `app_control.proto` and `pane_mirror.proto` from the [pinned runtime revision](https://github.com/lanej/zellij/tree/744c99f5a3a51682553897411d1a891dac04d886/zellij-utils/src/client_server_contract).
+The package vendors `common_types.proto`, `client_to_server.proto`, `server_to_client.proto`, `app_control.proto` and `pane_mirror.proto` from the [pinned runtime revision](https://github.com/lanej/zellij/tree/6647ab291f68c5154dfc4bcceab07b659a2d0efd/zellij-utils/src/client_server_contract).
 
 [`protocol/source.json`](https://github.com/lanej/zellij-client.nvim/blob/main/protocol/source.json) records the repository, revision, runtime version and contract namespace. The generated descriptors are not an independent compatibility guarantee. [Regenerate and verify them](../compatibility/#regenerate-the-contract) when updating the pin.
