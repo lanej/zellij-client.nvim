@@ -7,7 +7,7 @@ description: Runtime pinning, contract generation and validation boundaries.
 
 Use Neovim 0.11.5 or newer with LuaJIT, on macOS or Linux. The client has passed protocol and socket checks on Neovim 0.11.5, and live dotfiles navigation on 0.12.6.
 
-The supported server is [lanej/Zellij 0.46.0 at `e9491658`](https://github.com/lanej/zellij/tree/e9491658c1bad657fab8e474ab6186dd819eddf6), using `contract_version_1`. Compatibility with other revisions is unverified. The internal socket protocol can change independently of the version string.
+The supported server is [lanej/Zellij 0.46.0 at `256a2479`](https://github.com/lanej/zellij/tree/256a247936750a5490e337f40ea74cb35e094ed3), using `contract_version_1`. Compatibility with other revisions is unverified. The internal socket protocol can change independently of the version string.
 
 This generated contract requires the updated runtime. In the previous `744c99f5` contract, `Options` field 88 encoded a boolean; it now encodes `stacked_pane_list_orientation` as a string, and the boolean moved to field 89. Those encodings are incompatible. Update the client and server together; sharing version `0.46.0` and namespace `contract_version_1` does not make the older runtime compatible.
 
