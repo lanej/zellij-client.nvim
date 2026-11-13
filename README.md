@@ -8,7 +8,7 @@ Asynchronous native Zellij actions and the full generated protobuf contract for 
 
 With lazy.nvim, add `{ "lanej/zellij-client.nvim" }`, or declare it as a dependency of your integration. The package installs no mappings and needs no setup call.
 
-Requires Neovim 0.11.5+ with LuaJIT on macOS or Linux. The supported server is [lanej/Zellij 0.46.0 at `84874c1b`](https://github.com/lanej/zellij/tree/84874c1b91c279ad2b91f25c8af9c9d1ea7c94cd), using `contract_version_1`. Compatibility with other revisions is unverified.
+Requires Neovim 0.11.5+ with LuaJIT on macOS or Linux. The supported server is [lanej/Zellij 0.46.0 at `e9491658`](https://github.com/lanej/zellij/tree/e9491658c1bad657fab8e474ab6186dd819eddf6), using `contract_version_1`. Compatibility with other revisions is unverified.
 
 ## Develop
 
